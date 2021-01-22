@@ -1,0 +1,1975 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20203.20.1208.1036                               -->
+<workbook original-version='18.1' source-build='2020.3.4 (20203.20.1208.1036)' source-platform='win' version='18.1' xml:base='https://public.tableau.com' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <MapboxVectorStylesAndLayers />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelExtractV2.true...ObjectModelExtractV2 />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <_.fcp.SetMembershipControl.true...SetMembershipControl />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <SpatialFileLayer />
+    <WindowsPersistSimpleIdentifiers />
+    <ZoneBackgroundTransparency />
+  </document-format-change-manifest>
+  <repository-location id='WorldwideCropYieldDataVisualizationCompetitionDec2020' path='/workbooks' revision='1.0' />
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='key_crop_yields' inline='true' name='federated.0ig9doh00gzgqz1grrt4b1crhncq' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='key_crop_yields' name='textscan.0rl0hik1s79omc10nr47e1nn9wa7'>
+            <connection class='textscan' directory='C:/Users/User/Desktop/nss_data_analytics/projects/worldwide_crop_yield_python/data' filename='key_crop_yields.csv' password='' server='' workgroup-auth-mode='as-is' />
+          </named-connection>
+          <named-connection caption='geo-countries' name='ogrdirect.026hyzg07oyods19hfz2c1aftzq5'>
+            <connection class='ogrdirect' directory='C:/Users/User/Desktop/nss_data_analytics/projects/worldwide_crop_yield_python/data' filename='geo-countries.geojson' ogr-grid-shift-folder='C:\Program Files\Tableau\Tableau 2020.3\local\proj4' password='' server='' tablename='' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='ogrdirect.026hyzg07oyods19hfz2c1aftzq5' name='geo-countries.geojson' table='[geo-countries.geojson]' type='table'>
+          <columns>
+            <column datatype='string' name='ADMIN' ordinal='0' />
+            <column datatype='string' name='ISO_A3' ordinal='1' />
+            <column datatype='spatial' name='Geometry' ordinal='2' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation type='collection'>
+          <relation join='full' type='join'>
+            <clause type='join'>
+              <expression op='='>
+                <expression op='[key_crop_yields.csv].[Code]' />
+                <expression op='[geo-countries.geojson1].[ISO_A3]' />
+              </expression>
+            </clause>
+            <relation connection='textscan.0rl0hik1s79omc10nr47e1nn9wa7' name='key_crop_yields.csv' table='[key_crop_yields#csv]' type='table'>
+              <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                <column datatype='string' name='Entity' ordinal='0' />
+                <column datatype='string' name='Code' ordinal='1' />
+                <column datatype='integer' name='Year' ordinal='2' />
+                <column datatype='real' name='Wheat (tonnes per hectare)' ordinal='3' />
+                <column datatype='real' name='Rice (tonnes per hectare)' ordinal='4' />
+                <column datatype='real' name='Maize (tonnes per hectare)' ordinal='5' />
+                <column datatype='real' name='Soybeans (tonnes per hectare)' ordinal='6' />
+                <column datatype='real' name='Potatoes (tonnes per hectare)' ordinal='7' />
+                <column datatype='real' name='Beans (tonnes per hectare)' ordinal='8' />
+                <column datatype='real' name='Peas (tonnes per hectare)' ordinal='9' />
+                <column datatype='real' name='Cassava (tonnes per hectare)' ordinal='10' />
+                <column datatype='real' name='Barley (tonnes per hectare)' ordinal='11' />
+                <column datatype='real' name='Cocoa beans (tonnes per hectare)' ordinal='12' />
+                <column datatype='real' name='Bananas (tonnes per hectare)' ordinal='13' />
+              </columns>
+            </relation>
+            <relation connection='ogrdirect.026hyzg07oyods19hfz2c1aftzq5' name='geo-countries.geojson1' table='[geo-countries.geojson]' type='table'>
+              <columns>
+                <column datatype='string' name='ADMIN' ordinal='0' />
+                <column datatype='string' name='ISO_A3' ordinal='1' />
+                <column datatype='spatial' name='Geometry' ordinal='2' />
+              </columns>
+            </relation>
+          </relation>
+          <relation connection='ogrdirect.026hyzg07oyods19hfz2c1aftzq5' name='geo-countries.geojson' table='[geo-countries.geojson]' type='table'>
+            <columns>
+              <column datatype='string' name='ADMIN' ordinal='0' />
+              <column datatype='string' name='ISO_A3' ordinal='1' />
+              <column datatype='spatial' name='Geometry' ordinal='2' />
+            </columns>
+          </relation>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <cols>
+          <map key='[ADMIN (geo-countries.geojson1)]' value='[geo-countries.geojson1].[ADMIN]' />
+          <map key='[ADMIN]' value='[geo-countries.geojson].[ADMIN]' />
+          <map key='[Bananas (tonnes per hectare)]' value='[key_crop_yields.csv].[Bananas (tonnes per hectare)]' />
+          <map key='[Barley (tonnes per hectare)]' value='[key_crop_yields.csv].[Barley (tonnes per hectare)]' />
+          <map key='[Beans (tonnes per hectare)]' value='[key_crop_yields.csv].[Beans (tonnes per hectare)]' />
+          <map key='[Cassava (tonnes per hectare)]' value='[key_crop_yields.csv].[Cassava (tonnes per hectare)]' />
+          <map key='[Cocoa beans (tonnes per hectare)]' value='[key_crop_yields.csv].[Cocoa beans (tonnes per hectare)]' />
+          <map key='[Code]' value='[key_crop_yields.csv].[Code]' />
+          <map key='[Entity]' value='[key_crop_yields.csv].[Entity]' />
+          <map key='[Geometry (geo-countries.geojson1)]' value='[geo-countries.geojson1].[Geometry]' />
+          <map key='[Geometry]' value='[geo-countries.geojson].[Geometry]' />
+          <map key='[ISO_A3 (geo-countries.geojson1)]' value='[geo-countries.geojson1].[ISO_A3]' />
+          <map key='[ISO_A3]' value='[geo-countries.geojson].[ISO_A3]' />
+          <map key='[Maize (tonnes per hectare)]' value='[key_crop_yields.csv].[Maize (tonnes per hectare)]' />
+          <map key='[Peas (tonnes per hectare)]' value='[key_crop_yields.csv].[Peas (tonnes per hectare)]' />
+          <map key='[Potatoes (tonnes per hectare)]' value='[key_crop_yields.csv].[Potatoes (tonnes per hectare)]' />
+          <map key='[Rice (tonnes per hectare)]' value='[key_crop_yields.csv].[Rice (tonnes per hectare)]' />
+          <map key='[Soybeans (tonnes per hectare)]' value='[key_crop_yields.csv].[Soybeans (tonnes per hectare)]' />
+          <map key='[Wheat (tonnes per hectare)]' value='[key_crop_yields.csv].[Wheat (tonnes per hectare)]' />
+          <map key='[Year]' value='[key_crop_yields.csv].[Year]' />
+        </cols>
+        <refresh increment-key='' incremental-updates='false' />
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[key_crop_yields.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Entity</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Entity]</local-name>
+            <parent-name>[key_crop_yields.csv]</parent-name>
+            <remote-alias>Entity</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Code</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Code]</local-name>
+            <parent-name>[key_crop_yields.csv]</parent-name>
+            <remote-alias>Code</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Year</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Year]</local-name>
+            <parent-name>[key_crop_yields.csv]</parent-name>
+            <remote-alias>Year</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Wheat (tonnes per hectare)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Wheat (tonnes per hectare)]</local-name>
+            <parent-name>[key_crop_yields.csv]</parent-name>
+            <remote-alias>Wheat (tonnes per hectare)</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Rice (tonnes per hectare)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Rice (tonnes per hectare)]</local-name>
+            <parent-name>[key_crop_yields.csv]</parent-name>
+            <remote-alias>Rice (tonnes per hectare)</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Maize (tonnes per hectare)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Maize (tonnes per hectare)]</local-name>
+            <parent-name>[key_crop_yields.csv]</parent-name>
+            <remote-alias>Maize (tonnes per hectare)</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Soybeans (tonnes per hectare)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Soybeans (tonnes per hectare)]</local-name>
+            <parent-name>[key_crop_yields.csv]</parent-name>
+            <remote-alias>Soybeans (tonnes per hectare)</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Potatoes (tonnes per hectare)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Potatoes (tonnes per hectare)]</local-name>
+            <parent-name>[key_crop_yields.csv]</parent-name>
+            <remote-alias>Potatoes (tonnes per hectare)</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Beans (tonnes per hectare)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Beans (tonnes per hectare)]</local-name>
+            <parent-name>[key_crop_yields.csv]</parent-name>
+            <remote-alias>Beans (tonnes per hectare)</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Peas (tonnes per hectare)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Peas (tonnes per hectare)]</local-name>
+            <parent-name>[key_crop_yields.csv]</parent-name>
+            <remote-alias>Peas (tonnes per hectare)</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Cassava (tonnes per hectare)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Cassava (tonnes per hectare)]</local-name>
+            <parent-name>[key_crop_yields.csv]</parent-name>
+            <remote-alias>Cassava (tonnes per hectare)</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Barley (tonnes per hectare)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Barley (tonnes per hectare)]</local-name>
+            <parent-name>[key_crop_yields.csv]</parent-name>
+            <remote-alias>Barley (tonnes per hectare)</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Cocoa beans (tonnes per hectare)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Cocoa beans (tonnes per hectare)]</local-name>
+            <parent-name>[key_crop_yields.csv]</parent-name>
+            <remote-alias>Cocoa beans (tonnes per hectare)</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Bananas (tonnes per hectare)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Bananas (tonnes per hectare)]</local-name>
+            <parent-name>[key_crop_yields.csv]</parent-name>
+            <remote-alias>Bananas (tonnes per hectare)</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ADMIN</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[ADMIN (geo-countries.geojson1)]</local-name>
+            <parent-name>[geo-countries.geojson1]</parent-name>
+            <remote-alias>ADMIN</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ISO_A3</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[ISO_A3 (geo-countries.geojson1)]</local-name>
+            <parent-name>[geo-countries.geojson1]</parent-name>
+            <remote-alias>ISO_A3</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Geometry</remote-name>
+            <remote-type>8</remote-type>
+            <local-name>[Geometry (geo-countries.geojson1)]</local-name>
+            <parent-name>[geo-countries.geojson1]</parent-name>
+            <remote-alias>Geometry</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>spatial</local-type>
+            <aggregation>Collect</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ADMIN</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[ADMIN]</local-name>
+            <parent-name>[geo-countries.geojson]</parent-name>
+            <remote-alias>ADMIN</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[geo-countries.geojson_79BFC6EAB5FC41C7AA18D3818F283C03]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ISO_A3</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[ISO_A3]</local-name>
+            <parent-name>[geo-countries.geojson]</parent-name>
+            <remote-alias>ISO_A3</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[geo-countries.geojson_79BFC6EAB5FC41C7AA18D3818F283C03]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Geometry</remote-name>
+            <remote-type>8</remote-type>
+            <local-name>[Geometry]</local-name>
+            <parent-name>[geo-countries.geojson]</parent-name>
+            <remote-alias>Geometry</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>spatial</local-type>
+            <aggregation>Collect</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[geo-countries.geojson_79BFC6EAB5FC41C7AA18D3818F283C03]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Country' datatype='string' name='[ADMIN]' role='dimension' semantic-role='[Country].[Name]' type='nominal' />
+      <column aggregation='Sum' datatype='real' name='[Bananas (tonnes per hectare)]' role='dimension' type='ordinal' />
+      <column aggregation='Avg' caption='Barley (tonnes per hectare) (copy)' datatype='real' name='[Barley (tonnes per hectare) (copy)_954200173978255361]' role='dimension' type='ordinal'>
+        <calculation class='tableau' formula='[Barley (tonnes per hectare)]' />
+      </column>
+      <column aggregation='Avg' datatype='real' name='[Barley (tonnes per hectare)]' role='dimension' type='ordinal' />
+      <column aggregation='Avg' datatype='real' name='[Beans (tonnes per hectare)]' role='dimension' type='ordinal' />
+      <column caption='Banana' datatype='real' name='[Calculation_954200173977251840]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='AVG([Bananas (tonnes per hectare)])' />
+      </column>
+      <column caption='Barley' datatype='real' name='[Calculation_954200173978333186]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='avg([Barley (tonnes per hectare) (copy)_954200173978255361])' />
+      </column>
+      <column caption='Beans' datatype='real' name='[Calculation_954200173978689539]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='avg([Beans (tonnes per hectare)])' />
+      </column>
+      <column caption='Cassava' datatype='real' name='[Calculation_954200173979459588]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='avg([Cassava (tonnes per hectare)])' />
+      </column>
+      <column caption='Cocoa beans' datatype='real' name='[Calculation_954200173979951109]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='avg([Cocoa beans (tonnes per hectare)])' />
+      </column>
+      <column caption='Maize' datatype='real' name='[Calculation_954200173980307462]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='avg([Maize (tonnes per hectare)])' />
+      </column>
+      <column caption='Peas' datatype='real' name='[Calculation_954200173980495879]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='avg([Peas (tonnes per hectare)])' />
+      </column>
+      <column caption='Potatoes' datatype='real' name='[Calculation_954200173980680200]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='avg([Potatoes (tonnes per hectare)])' />
+      </column>
+      <column caption='Rice' datatype='real' name='[Calculation_954200173980880905]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='avg([Rice (tonnes per hectare)])' />
+      </column>
+      <column caption='Soybeans' datatype='real' name='[Calculation_954200173981077514]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='avg([Soybeans (tonnes per hectare)])' />
+      </column>
+      <column caption='Wheat' datatype='real' name='[Calculation_954200173981282315]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='avg([Wheat (tonnes per hectare)])' />
+      </column>
+      <column aggregation='Avg' datatype='real' name='[Cassava (tonnes per hectare)]' role='dimension' type='ordinal' />
+      <column aggregation='Avg' datatype='real' name='[Cocoa beans (tonnes per hectare)]' role='dimension' type='ordinal' />
+      <column caption='Code1' datatype='string' name='[Code]' role='dimension' type='nominal' />
+      <column datatype='spatial' hidden='true' name='[Geometry (geo-countries.geojson1)]' role='measure' type='nominal' />
+      <column caption='ISO A3 (geo-countries.geojson1)' datatype='string' name='[ISO_A3 (geo-countries.geojson1)]' role='dimension' type='nominal' />
+      <column caption='Iso A3' datatype='string' name='[ISO_A3]' role='dimension' type='nominal' />
+      <column aggregation='Avg' datatype='real' name='[Maize (tonnes per hectare)]' role='dimension' type='ordinal' />
+      <column aggregation='Avg' datatype='real' name='[Peas (tonnes per hectare)]' role='dimension' type='ordinal' />
+      <column aggregation='Avg' datatype='real' name='[Potatoes (tonnes per hectare)]' role='dimension' type='ordinal' />
+      <column aggregation='Avg' datatype='real' name='[Rice (tonnes per hectare)]' role='dimension' type='ordinal' />
+      <column aggregation='Avg' datatype='real' name='[Soybeans (tonnes per hectare)]' role='dimension' type='ordinal' />
+      <column aggregation='Avg' datatype='real' name='[Wheat (tonnes per hectare)]' role='dimension' type='ordinal' />
+      <column caption='Year1' datatype='integer' name='[Year]' role='dimension' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='geo-countries.geojson' datatype='table' hidden='true' name='[__tableau_internal_object_id__].[geo-countries.geojson_79BFC6EAB5FC41C7AA18D3818F283C03]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='key_crop_yields.csv' datatype='table' hidden='true' name='[__tableau_internal_object_id__].[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53]' role='measure' type='quantitative' />
+      <extract _.fcp.ObjectModelExtractV2.true...object-id='' count='-1' enabled='true' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='C:/Users/User/Documents/My Tableau Repository/Datasources/key_crop_yields.hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='01/22/2021 04:07:03 PM' username='tableau_internal_user'>
+          <_.fcp.ObjectModelEncapsulateLegacy.false...relation name='geo-countries.geojson_79BFC6EAB5FC41C7AA18D3818F283C03' table='[Extract].[geo-countries.geojson_79BFC6EAB5FC41C7AA18D3818F283C03]' type='table' />
+          <_.fcp.ObjectModelEncapsulateLegacy.true...relation type='collection'>
+            <relation name='key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53' table='[Extract].[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53]' type='table' />
+            <relation name='geo-countries.geojson_79BFC6EAB5FC41C7AA18D3818F283C03' table='[Extract].[geo-countries.geojson_79BFC6EAB5FC41C7AA18D3818F283C03]' type='table' />
+          </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+          <cols>
+            <map key='[ADMIN (geo-countries.geojson1)]' value='[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53].[ADMIN]' />
+            <map key='[ADMIN]' value='[geo-countries.geojson_79BFC6EAB5FC41C7AA18D3818F283C03].[ADMIN]' />
+            <map key='[Bananas (tonnes per hectare)]' value='[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53].[Bananas (tonnes per hectare)]' />
+            <map key='[Barley (tonnes per hectare)]' value='[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53].[Barley (tonnes per hectare)]' />
+            <map key='[Beans (tonnes per hectare)]' value='[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53].[Beans (tonnes per hectare)]' />
+            <map key='[Cassava (tonnes per hectare)]' value='[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53].[Cassava (tonnes per hectare)]' />
+            <map key='[Cocoa beans (tonnes per hectare)]' value='[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53].[Cocoa beans (tonnes per hectare)]' />
+            <map key='[Code]' value='[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53].[Code]' />
+            <map key='[Entity]' value='[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53].[Entity]' />
+            <map key='[Geometry]' value='[geo-countries.geojson_79BFC6EAB5FC41C7AA18D3818F283C03].[Geometry]' />
+            <map key='[ISO_A3 (geo-countries.geojson1)]' value='[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53].[ISO_A3]' />
+            <map key='[ISO_A3]' value='[geo-countries.geojson_79BFC6EAB5FC41C7AA18D3818F283C03].[ISO_A3]' />
+            <map key='[Maize (tonnes per hectare)]' value='[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53].[Maize (tonnes per hectare)]' />
+            <map key='[Peas (tonnes per hectare)]' value='[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53].[Peas (tonnes per hectare)]' />
+            <map key='[Potatoes (tonnes per hectare)]' value='[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53].[Potatoes (tonnes per hectare)]' />
+            <map key='[Rice (tonnes per hectare)]' value='[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53].[Rice (tonnes per hectare)]' />
+            <map key='[Soybeans (tonnes per hectare)]' value='[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53].[Soybeans (tonnes per hectare)]' />
+            <map key='[Wheat (tonnes per hectare)]' value='[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53].[Wheat (tonnes per hectare)]' />
+            <map key='[Year]' value='[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53].[Year]' />
+          </cols>
+          <refresh increment-key='' incremental-updates='false'>
+            <refresh-event add-from-file-path='key_crop_yields' increment-value='%null%' refresh-type='create' rows-inserted='13383' timestamp-start='2021-01-22 16:07:03.422' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>Entity</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Entity]</local-name>
+              <parent-name>[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53]</parent-name>
+              <remote-alias>Entity</remote-alias>
+              <ordinal>0</ordinal>
+              <family>key_crop_yields.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>296</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Code</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Code]</local-name>
+              <parent-name>[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53]</parent-name>
+              <remote-alias>Code</remote-alias>
+              <ordinal>1</ordinal>
+              <family>key_crop_yields.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>258</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Year</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Year]</local-name>
+              <parent-name>[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53]</parent-name>
+              <remote-alias>Year</remote-alias>
+              <ordinal>2</ordinal>
+              <family>key_crop_yields.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>59</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Wheat (tonnes per hectare)</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Wheat (tonnes per hectare)]</local-name>
+              <parent-name>[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53]</parent-name>
+              <remote-alias>Wheat (tonnes per hectare)</remote-alias>
+              <ordinal>3</ordinal>
+              <family>key_crop_yields.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>4087</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Rice (tonnes per hectare)</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Rice (tonnes per hectare)]</local-name>
+              <parent-name>[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53]</parent-name>
+              <remote-alias>Rice (tonnes per hectare)</remote-alias>
+              <ordinal>4</ordinal>
+              <family>key_crop_yields.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>4987</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Maize (tonnes per hectare)</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Maize (tonnes per hectare)]</local-name>
+              <parent-name>[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53]</parent-name>
+              <remote-alias>Maize (tonnes per hectare)</remote-alias>
+              <ordinal>5</ordinal>
+              <family>key_crop_yields.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>4837</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Soybeans (tonnes per hectare)</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Soybeans (tonnes per hectare)]</local-name>
+              <parent-name>[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53]</parent-name>
+              <remote-alias>Soybeans (tonnes per hectare)</remote-alias>
+              <ordinal>6</ordinal>
+              <family>key_crop_yields.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>2762</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Potatoes (tonnes per hectare)</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Potatoes (tonnes per hectare)]</local-name>
+              <parent-name>[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53]</parent-name>
+              <remote-alias>Potatoes (tonnes per hectare)</remote-alias>
+              <ordinal>7</ordinal>
+              <family>key_crop_yields.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>4612</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Beans (tonnes per hectare)</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Beans (tonnes per hectare)]</local-name>
+              <parent-name>[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53]</parent-name>
+              <remote-alias>Beans (tonnes per hectare)</remote-alias>
+              <ordinal>8</ordinal>
+              <family>key_crop_yields.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3418</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Peas (tonnes per hectare)</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Peas (tonnes per hectare)]</local-name>
+              <parent-name>[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53]</parent-name>
+              <remote-alias>Peas (tonnes per hectare)</remote-alias>
+              <ordinal>9</ordinal>
+              <family>key_crop_yields.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3447</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Cassava (tonnes per hectare)</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Cassava (tonnes per hectare)]</local-name>
+              <parent-name>[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53]</parent-name>
+              <remote-alias>Cassava (tonnes per hectare)</remote-alias>
+              <ordinal>10</ordinal>
+              <family>key_crop_yields.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3015</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Barley (tonnes per hectare)</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Barley (tonnes per hectare)]</local-name>
+              <parent-name>[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53]</parent-name>
+              <remote-alias>Barley (tonnes per hectare)</remote-alias>
+              <ordinal>11</ordinal>
+              <family>key_crop_yields.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3212</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Cocoa beans (tonnes per hectare)</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Cocoa beans (tonnes per hectare)]</local-name>
+              <parent-name>[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53]</parent-name>
+              <remote-alias>Cocoa beans (tonnes per hectare)</remote-alias>
+              <ordinal>12</ordinal>
+              <family>key_crop_yields.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1907</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Bananas (tonnes per hectare)</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Bananas (tonnes per hectare)]</local-name>
+              <parent-name>[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53]</parent-name>
+              <remote-alias>Bananas (tonnes per hectare)</remote-alias>
+              <ordinal>13</ordinal>
+              <family>key_crop_yields.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3905</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>ADMIN</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[ADMIN (geo-countries.geojson1)]</local-name>
+              <parent-name>[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53]</parent-name>
+              <remote-alias>ADMIN</remote-alias>
+              <ordinal>14</ordinal>
+              <family>geo-countries.geojson1</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>259</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>ISO_A3</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[ISO_A3 (geo-countries.geojson1)]</local-name>
+              <parent-name>[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53]</parent-name>
+              <remote-alias>ISO_A3</remote-alias>
+              <ordinal>15</ordinal>
+              <family>geo-countries.geojson1</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>259</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>ADMIN</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[ADMIN]</local-name>
+              <parent-name>[geo-countries.geojson_79BFC6EAB5FC41C7AA18D3818F283C03]</parent-name>
+              <remote-alias>ADMIN</remote-alias>
+              <ordinal>16</ordinal>
+              <family>geo-countries.geojson</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>255</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[geo-countries.geojson_79BFC6EAB5FC41C7AA18D3818F283C03]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>ISO_A3</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[ISO_A3]</local-name>
+              <parent-name>[geo-countries.geojson_79BFC6EAB5FC41C7AA18D3818F283C03]</parent-name>
+              <remote-alias>ISO_A3</remote-alias>
+              <ordinal>17</ordinal>
+              <family>geo-countries.geojson</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>239</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[geo-countries.geojson_79BFC6EAB5FC41C7AA18D3818F283C03]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Geometry</remote-name>
+              <remote-type>128</remote-type>
+              <local-name>[Geometry]</local-name>
+              <parent-name>[geo-countries.geojson_79BFC6EAB5FC41C7AA18D3818F283C03]</parent-name>
+              <remote-alias>Geometry</remote-alias>
+              <ordinal>18</ordinal>
+              <family>geo-countries.geojson</family>
+              <local-type>spatial</local-type>
+              <aggregation>Collect</aggregation>
+              <approx-count>255</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[geo-countries.geojson_79BFC6EAB5FC41C7AA18D3818F283C03]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='geo-countries.geojson' id='geo-countries.geojson_79BFC6EAB5FC41C7AA18D3818F283C03'>
+            <properties context=''>
+              <relation connection='ogrdirect.026hyzg07oyods19hfz2c1aftzq5' name='geo-countries.geojson' table='[geo-countries.geojson]' type='table'>
+                <columns>
+                  <column datatype='string' name='ADMIN' ordinal='0' />
+                  <column datatype='string' name='ISO_A3' ordinal='1' />
+                  <column datatype='spatial' name='Geometry' ordinal='2' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='geo-countries.geojson_79BFC6EAB5FC41C7AA18D3818F283C03' table='[Extract].[geo-countries.geojson_79BFC6EAB5FC41C7AA18D3818F283C03]' type='table' />
+            </properties>
+          </object>
+          <object caption='key_crop_yields.csv' id='key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53'>
+            <properties context=''>
+              <relation join='full' type='join'>
+                <clause type='join'>
+                  <expression op='='>
+                    <expression op='[key_crop_yields.csv].[Code]' />
+                    <expression op='[geo-countries.geojson1].[ISO_A3]' />
+                  </expression>
+                </clause>
+                <relation connection='textscan.0rl0hik1s79omc10nr47e1nn9wa7' name='key_crop_yields.csv' table='[key_crop_yields#csv]' type='table'>
+                  <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                    <column datatype='string' name='Entity' ordinal='0' />
+                    <column datatype='string' name='Code' ordinal='1' />
+                    <column datatype='integer' name='Year' ordinal='2' />
+                    <column datatype='real' name='Wheat (tonnes per hectare)' ordinal='3' />
+                    <column datatype='real' name='Rice (tonnes per hectare)' ordinal='4' />
+                    <column datatype='real' name='Maize (tonnes per hectare)' ordinal='5' />
+                    <column datatype='real' name='Soybeans (tonnes per hectare)' ordinal='6' />
+                    <column datatype='real' name='Potatoes (tonnes per hectare)' ordinal='7' />
+                    <column datatype='real' name='Beans (tonnes per hectare)' ordinal='8' />
+                    <column datatype='real' name='Peas (tonnes per hectare)' ordinal='9' />
+                    <column datatype='real' name='Cassava (tonnes per hectare)' ordinal='10' />
+                    <column datatype='real' name='Barley (tonnes per hectare)' ordinal='11' />
+                    <column datatype='real' name='Cocoa beans (tonnes per hectare)' ordinal='12' />
+                    <column datatype='real' name='Bananas (tonnes per hectare)' ordinal='13' />
+                  </columns>
+                </relation>
+                <relation connection='ogrdirect.026hyzg07oyods19hfz2c1aftzq5' name='geo-countries.geojson1' table='[geo-countries.geojson]' type='table'>
+                  <columns>
+                    <column datatype='string' name='ADMIN' ordinal='0' />
+                    <column datatype='string' name='ISO_A3' ordinal='1' />
+                    <column datatype='spatial' name='Geometry' ordinal='2' />
+                  </columns>
+                </relation>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53' table='[Extract].[key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53]' type='table' />
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[Code]' />
+              <expression op='[ISO_A3]' />
+            </expression>
+            <first-end-point object-id='key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53' />
+            <second-end-point object-id='geo-countries.geojson_79BFC6EAB5FC41C7AA18D3818F283C03' />
+          </relationship>
+        </relationships>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontcolor='#4e79a7' fontname='Tableau Bold'>Worldwide Crop Yield 1961 - 2018</run>
+            <run>Æ&#10;</run>
+            <run fontcolor='#000000cc' fontsize='11'>(tonnes per hectare)</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='key_crop_yields' name='federated.0ig9doh00gzgqz1grrt4b1crhncq' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.0ig9doh00gzgqz1grrt4b1crhncq'>
+            <column caption='Country' datatype='string' name='[ADMIN]' role='dimension' semantic-role='[Country].[Name]' type='nominal' />
+            <column aggregation='Sum' datatype='real' name='[Bananas (tonnes per hectare)]' role='dimension' type='ordinal' />
+            <column aggregation='Avg' datatype='real' name='[Barley (tonnes per hectare)]' role='dimension' type='ordinal' />
+            <column aggregation='Avg' datatype='real' name='[Beans (tonnes per hectare)]' role='dimension' type='ordinal' />
+            <column caption='Banana' datatype='real' name='[Calculation_954200173977251840]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='AVG([Bananas (tonnes per hectare)])' />
+            </column>
+            <column caption='Potatoes' datatype='real' name='[Calculation_954200173980680200]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='avg([Potatoes (tonnes per hectare)])' />
+            </column>
+            <column aggregation='Avg' datatype='real' name='[Cassava (tonnes per hectare)]' role='dimension' type='ordinal' />
+            <column aggregation='Avg' datatype='real' name='[Cocoa beans (tonnes per hectare)]' role='dimension' type='ordinal' />
+            <column aggregation='Avg' datatype='real' name='[Maize (tonnes per hectare)]' role='dimension' type='ordinal' />
+            <column aggregation='Avg' datatype='real' name='[Peas (tonnes per hectare)]' role='dimension' type='ordinal' />
+            <column aggregation='Avg' datatype='real' name='[Potatoes (tonnes per hectare)]' role='dimension' type='ordinal' />
+            <column aggregation='Avg' datatype='real' name='[Rice (tonnes per hectare)]' role='dimension' type='ordinal' />
+            <column aggregation='Avg' datatype='real' name='[Soybeans (tonnes per hectare)]' role='dimension' type='ordinal' />
+            <column aggregation='Avg' datatype='real' name='[Wheat (tonnes per hectare)]' role='dimension' type='ordinal' />
+            <column caption='Year1' datatype='integer' name='[Year]' role='dimension' type='quantitative' />
+            <column-instance column='[Barley (tonnes per hectare)]' derivation='Avg' name='[avg:Barley (tonnes per hectare):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Beans (tonnes per hectare)]' derivation='Avg' name='[avg:Beans (tonnes per hectare):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Cassava (tonnes per hectare)]' derivation='Avg' name='[avg:Cassava (tonnes per hectare):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Cocoa beans (tonnes per hectare)]' derivation='Avg' name='[avg:Cocoa beans (tonnes per hectare):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Maize (tonnes per hectare)]' derivation='Avg' name='[avg:Maize (tonnes per hectare):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Peas (tonnes per hectare)]' derivation='Avg' name='[avg:Peas (tonnes per hectare):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Potatoes (tonnes per hectare)]' derivation='Avg' name='[avg:Potatoes (tonnes per hectare):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Rice (tonnes per hectare)]' derivation='Avg' name='[avg:Rice (tonnes per hectare):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Soybeans (tonnes per hectare)]' derivation='Avg' name='[avg:Soybeans (tonnes per hectare):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Wheat (tonnes per hectare)]' derivation='Avg' name='[avg:Wheat (tonnes per hectare):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[ADMIN]' derivation='None' name='[none:ADMIN:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Year]' derivation='None' name='[none:Year:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_954200173977251840]' derivation='User' name='[usr:Calculation_954200173977251840:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_954200173980680200]' derivation='User' name='[usr:Calculation_954200173980680200:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0ig9doh00gzgqz1grrt4b1crhncq].[:Measure Names]'>
+            <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0ig9doh00gzgqz1grrt4b1crhncq].[usr:Calculation_954200173980680200:qk]&quot;' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <manual-sort column='[federated.0ig9doh00gzgqz1grrt4b1crhncq].[:Measure Names]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;[federated.0ig9doh00gzgqz1grrt4b1crhncq].[usr:Calculation_954200173977251840:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0ig9doh00gzgqz1grrt4b1crhncq].[avg:Barley (tonnes per hectare):qk]&quot;</bucket>
+              <bucket>&quot;[federated.0ig9doh00gzgqz1grrt4b1crhncq].[avg:Beans (tonnes per hectare):qk]&quot;</bucket>
+              <bucket>&quot;[federated.0ig9doh00gzgqz1grrt4b1crhncq].[avg:Cassava (tonnes per hectare):qk]&quot;</bucket>
+              <bucket>&quot;[federated.0ig9doh00gzgqz1grrt4b1crhncq].[avg:Cocoa beans (tonnes per hectare):qk]&quot;</bucket>
+              <bucket>&quot;[federated.0ig9doh00gzgqz1grrt4b1crhncq].[avg:Maize (tonnes per hectare):qk]&quot;</bucket>
+              <bucket>&quot;[federated.0ig9doh00gzgqz1grrt4b1crhncq].[avg:Peas (tonnes per hectare):qk]&quot;</bucket>
+              <bucket>&quot;[federated.0ig9doh00gzgqz1grrt4b1crhncq].[avg:Potatoes (tonnes per hectare):qk]&quot;</bucket>
+              <bucket>&quot;[federated.0ig9doh00gzgqz1grrt4b1crhncq].[avg:Rice (tonnes per hectare):qk]&quot;</bucket>
+              <bucket>&quot;[federated.0ig9doh00gzgqz1grrt4b1crhncq].[avg:Soybeans (tonnes per hectare):qk]&quot;</bucket>
+              <bucket>&quot;[federated.0ig9doh00gzgqz1grrt4b1crhncq].[avg:Wheat (tonnes per hectare):qk]&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <filter class='quantitative' column='[federated.0ig9doh00gzgqz1grrt4b1crhncq].[none:Year:qk]' included-values='in-range-or-null'>
+            <min>1961</min>
+            <max>2018</max>
+          </filter>
+          <slices>
+            <column>[federated.0ig9doh00gzgqz1grrt4b1crhncq].[none:Year:qk]</column>
+            <column>[federated.0ig9doh00gzgqz1grrt4b1crhncq].[:Measure Names]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.0ig9doh00gzgqz1grrt4b1crhncq].[Longitude (generated)]' field-type='quantitative' max='20244297.473530542' min='-19830719.212047953' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.0ig9doh00gzgqz1grrt4b1crhncq].[Latitude (generated)]' field-type='quantitative' max='21318818.815916449' min='-17502150.485701233' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='legend-title-text'>
+            <format attr='color' field='[federated.0ig9doh00gzgqz1grrt4b1crhncq].[Multiple Values]' value='Crop (tonnes per hectare)'>
+              <formatted-text>
+                <run>Crop (tonnes per hectare)</run>
+              </formatted-text>
+            </format>
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+          <style-rule element='quick-filter'>
+            <format attr='title' field='[federated.0ig9doh00gzgqz1grrt4b1crhncq].[:Measure Names]' value='Crop Yield (tonnes per hectare)'>
+              <formatted-text>
+                <run>Crop Yield (tonnes per hectare)</run>
+              </formatted-text>
+            </format>
+            <format attr='title' field='[federated.0ig9doh00gzgqz1grrt4b1crhncq].[none:Year:qk]' value='Year'>
+              <formatted-text>
+                <run>Year</run>
+              </formatted-text>
+            </format>
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='3' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0ig9doh00gzgqz1grrt4b1crhncq].[Multiple Values]' />
+              <lod column='[federated.0ig9doh00gzgqz1grrt4b1crhncq].[none:ADMIN:nk]' />
+              <lod column='[federated.0ig9doh00gzgqz1grrt4b1crhncq].[Multiple Values]' />
+              <geometry column='[federated.0ig9doh00gzgqz1grrt4b1crhncq].[Geometry (generated)]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>([federated.0ig9doh00gzgqz1grrt4b1crhncq].[:Measure Names] * [federated.0ig9doh00gzgqz1grrt4b1crhncq].[Latitude (generated)])</rows>
+        <cols>[federated.0ig9doh00gzgqz1grrt4b1crhncq].[Longitude (generated)]</cols>
+      </table>
+      <simple-id uuid='{193D6AB4-7A25-4C80-92DD-227B346BD93E}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard name='Dashboard 3'>
+      <style />
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <datasources>
+        <datasource caption='key_crop_yields' name='federated.0ig9doh00gzgqz1grrt4b1crhncq' />
+      </datasources>
+      <datasource-dependencies datasource='federated.0ig9doh00gzgqz1grrt4b1crhncq'>
+        <column caption='Year1' datatype='integer' name='[Year]' role='dimension' type='quantitative' />
+        <column-instance column='[Year]' derivation='None' name='[none:Year:qk]' pivot='key' type='quantitative' />
+      </datasource-dependencies>
+      <zones>
+        <zone _.fcp.SetMembershipControl.false...type='layout-basic' _.fcp.SetMembershipControl.true...type-v2='layout-basic' h='100000' id='4' w='100000' x='0' y='0'>
+          <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' h='98000' id='7' param='horz' w='98400' x='800' y='1000'>
+            <zone _.fcp.SetMembershipControl.false...type='layout-basic' _.fcp.SetMembershipControl.true...type-v2='layout-basic' h='98000' id='5' w='82400' x='800' y='1000'>
+              <zone h='98000' id='3' name='Sheet 1' w='82400' x='800' y='1000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+            <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' fixed-size='160' h='98000' id='6' is-fixed='true' param='vert' w='16000' x='83200' y='1000'>
+              <zone _.fcp.SetMembershipControl.false...type='filter' _.fcp.SetMembershipControl.true...type-v2='filter' h='32500' id='8' mode='radiolist' name='Sheet 1' param='[federated.0ig9doh00gzgqz1grrt4b1crhncq].[:Measure Names]' w='16000' x='83200' y='1000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone _.fcp.SetMembershipControl.false...type='filter' _.fcp.SetMembershipControl.true...type-v2='filter' h='8625' id='9' name='Sheet 1' param='[federated.0ig9doh00gzgqz1grrt4b1crhncq].[none:Year:qk]' show-domain='false' show-null-ctrls='false' w='16000' x='83200' y='33500'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone _.fcp.SetMembershipControl.false...type='color' _.fcp.SetMembershipControl.true...type-v2='color' h='8125' id='10' name='Sheet 1' pane-specification-id='3' param='[federated.0ig9doh00gzgqz1grrt4b1crhncq].[Multiple Values]' w='16000' x='83200' y='42125'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
+          <zones>
+            <zone _.fcp.SetMembershipControl.false...type='layout-basic' _.fcp.SetMembershipControl.true...type-v2='layout-basic' h='100000' id='18' w='100000' x='0' y='0'>
+              <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' h='98000' id='17' param='vert' w='98400' x='800' y='1000'>
+                <zone _.fcp.SetMembershipControl.false...type='filter' _.fcp.SetMembershipControl.true...type-v2='filter' h='32500' id='8' mode='dropdown' name='Sheet 1' param='[federated.0ig9doh00gzgqz1grrt4b1crhncq].[:Measure Names]' w='16000' x='83200' y='1000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone _.fcp.SetMembershipControl.false...type='filter' _.fcp.SetMembershipControl.true...type-v2='filter' h='8625' id='9' name='Sheet 1' param='[federated.0ig9doh00gzgqz1grrt4b1crhncq].[none:Year:qk]' show-domain='false' show-null-ctrls='false' w='16000' x='83200' y='33500'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='98000' id='3' is-fixed='true' name='Sheet 1' w='82400' x='800' y='1000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone _.fcp.SetMembershipControl.false...type='color' _.fcp.SetMembershipControl.true...type-v2='color' h='8125' id='10' name='Sheet 1' pane-specification-id='3' param='[federated.0ig9doh00gzgqz1grrt4b1crhncq].[Multiple Values]' w='16000' x='83200' y='42125'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{7D808D8A-916F-4CDB-B9EC-99C01176ABDB}' />
+    </dashboard>
+    <dashboard name='Dashboard 4'>
+      <style />
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <zones />
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
+          <zones>
+            <zone _.fcp.SetMembershipControl.false...type='layout-basic' _.fcp.SetMembershipControl.true...type-v2='layout-basic' h='100000' id='8' w='100000' x='0' y='0'>
+              <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' h='98000' id='7' param='vert' w='98400' x='800' y='1000' />
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{01BCE32B-2929-43FC-AD76-90C5A276A10C}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='30'>
+    <window class='worksheet' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='radiolist' param='[federated.0ig9doh00gzgqz1grrt4b1crhncq].[:Measure Names]' show-morefewerbutton='false' type='filter' />
+            <card param='[federated.0ig9doh00gzgqz1grrt4b1crhncq].[none:Year:qk]' show-domain='false' show-null-ctrls='false' type='filter' />
+            <card pane-specification-id='3' param='[federated.0ig9doh00gzgqz1grrt4b1crhncq].[Multiple Values]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0ig9doh00gzgqz1grrt4b1crhncq].[:Measure Names]</field>
+            <field>[federated.0ig9doh00gzgqz1grrt4b1crhncq].[Multiple Values]</field>
+            <field>[federated.0ig9doh00gzgqz1grrt4b1crhncq].[__tableau_internal_object_id__].[cnt:key_crop_yields.csv_4ABBC3D63EF24D19939BF943BC28BF53:qk]</field>
+            <field>[federated.0ig9doh00gzgqz1grrt4b1crhncq].[clct:Geometry:nk]</field>
+            <field>[federated.0ig9doh00gzgqz1grrt4b1crhncq].[none:ADMIN (geo-countries.geojson1):nk]</field>
+            <field>[federated.0ig9doh00gzgqz1grrt4b1crhncq].[none:ADMIN:nk]</field>
+            <field>[federated.0ig9doh00gzgqz1grrt4b1crhncq].[none:Bananas (tonnes per hectare):qk]</field>
+            <field>[federated.0ig9doh00gzgqz1grrt4b1crhncq].[none:Calculation_657525548230660097:qk]</field>
+            <field>[federated.0ig9doh00gzgqz1grrt4b1crhncq].[none:Code:nk]</field>
+            <field>[federated.0ig9doh00gzgqz1grrt4b1crhncq].[none:Entity:nk]</field>
+            <field>[federated.0ig9doh00gzgqz1grrt4b1crhncq].[none:Year:qk]</field>
+          </color-one-way>
+        </highlight>
+        <default-map-tool-selection tool='2' />
+      </viewpoint>
+      <simple-id uuid='{B43A0827-C5F8-4890-BE19-12F0328E57BF}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Dashboard 3'>
+      <viewpoints>
+        <viewpoint name='Sheet 1'>
+          <zoom type='entire-view' />
+          <default-map-tool-selection tool='1' />
+        </viewpoint>
+      </viewpoints>
+      <active id='8' />
+      <simple-id uuid='{26422634-EB7D-44AD-B47A-CBCDF9B3EE43}' />
+    </window>
+    <window class='dashboard' name='Dashboard 4'>
+      <viewpoints />
+      <active id='-1' />
+      <simple-id uuid='{27E2D5E8-E6D9-470A-A203-2D4131FD7136}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Dashboard 3' width='192'>
+      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
+    </thumbnail>
+    <thumbnail height='192' name='Dashboard 4' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAACFUlEQVR4nO3TMQEAIAzAMMC/5yFjRxMFfXpnZg5Eve0A2GQA0gxAmgFIMwBpBiDNAKQZ
+      gDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFI
+      MwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQD
+      kGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBp
+      BiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA
+      0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDN
+      AKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxA
+      mgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZ
+      gDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFI
+      MwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKR9Y+0F
+      fBUOM1sAAAAASUVORK5CYII=
+    </thumbnail>
+    <thumbnail height='192' name='Sheet 1' width='192'>
+      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
+    </thumbnail>
+  </thumbnails>
+</workbook>
